@@ -1,47 +1,16 @@
 
-
-/*const val1=parseInt(prompt('valor producto 1 que desea comprar'))
-const val2= parseInt(prompt('valor producto 2 que desea comprar'))
-const val3 = parseInt(prompt( 'valor producto 2 que desea comprar'))
-const val4 = parseInt(prompt( 'valor producto 4 que desea comprar'))
+// es una calculadora de intereses para pagos en cuotas en un e-commerce
 
 
-function SumarCarro(valor1,valor2,valor3,valor4,){
+function Calcular_interes(){ // inicio de funcion principal
 
-    while(sumarproducto==true){
-
-        let total= valor1+valor2+valor3+valor4
-        let subtotal = total/1.21;
-        let iva= total*0.21
-        let envio
-        if (total<20000){
-            envio=4000
-        }else(envio=0)
-        let total_compra=envio+total
-
-  
-        console.log(envio)
-
-    }
-
-}
-
-
-SumarCarro(val1,val2,val3,val4)*/
-
-
-
-
-
-function Calcular_interes(){
-
-    let producto= prompt('Nombre Producto')
+    let producto= prompt('Nombre Producto') 
     let valor=parseInt(prompt('valor producto'))
     let cuotas=parseInt(prompt('cantidad de cuotas: \n elija entre 1-2-3-4-5-6 y 12 cuotas' ))
     
 
 
-    function establecer_valor(valor1,cuotas1)  {
+    function establecer_valor(valor1,cuotas1)  { // funcion para establecer el interes que corresponda en cada caso
         switch(cuotas1){
             case 1: 
                 return valor1
@@ -57,15 +26,16 @@ function Calcular_interes(){
                 return valor1*1.60;
             case 12:
                 return valor1*2  
-            default: return valor1                     
+            default: return alert("cuotas no aceptadas")                  
 
         }
     }
     
-    let precio_final = establecer_valor(valor,cuotas)
-    let interes=precio_final-valor
+    let precio_final = establecer_valor(valor,cuotas) // estableciendo el valor final en base a la funcion de las cuotas
+    let interes=precio_final-valor // buscando el interes discriminado del precio final
+    let valor_cuota= precio_final/cuotas // buscando el valor de cada cuota
     
-    alert("el precio te queda en $" + precio_final + " Sumaste un interes de $" + interes + " abonando en " + cuotas + " cuotas " + "para el producto " + producto)
+    alert("el precio te queda en $" + precio_final.toFixed(2) + " Sumaste un interes de $" + interes + " abonando en " + cuotas + " cuotas de $ "+ valor_cuota.toFixed(2)+ " cada una " + "para el producto " + producto)
     
 }    
 
