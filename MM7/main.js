@@ -1,4 +1,5 @@
 
+//array con objetos para exportar al html
 
 const productos = [
     {
@@ -109,6 +110,8 @@ const productos = [
 ];
 
 
+// variables para los eventos y funciones
+
 const contenedor_card = document.querySelector('.contenedor-card');
 const contenedor_carro = document.querySelector('.contenedor-carro');
 const totalCompra = document.getElementById('total-compra');
@@ -117,15 +120,17 @@ const totalPagar = document.getElementById('total-pagar');
 const totalCuotas = document.getElementById('total-cuotas');
 const cuotasInput = document.getElementById('cuotas');
 const checkDomicilio = document.querySelector('.check-domicilio');
-
 let total = 0;
 let envio = 0;
+
+// creacion e insercion de productos en el html recorriendo el array con el for each
+
 
 productos.forEach((producto) => {
     let div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
-        <img src="${producto.img}" alt="producto">
+        <img src="${producto.img}" alt="producto">   
         <h3>${producto.titulo}</h3>
         <h4>$ ${producto.precio}</h4>
     `;
@@ -140,6 +145,8 @@ productos.forEach((producto) => {
     div.append(button);
     contenedor_card.append(div);
 });
+
+// funcion de agregar al carro que se usa con el boton agregar de cada producto
 
 function agregarAlCarro(producto) {
     let div = document.createElement('div');
@@ -164,12 +171,15 @@ function agregarAlCarro(producto) {
     actualizarTotales();
 }
 
+// funcion de eliminar del carro
+
 function eliminarDelCarro(div, precio) {
     div.remove();
     total -= precio;
     actualizarTotales();
 }
 
+// funcion para agregar el costo del envio en caso que este confirmado el check box
 function actualizarTotales() {
     totalCompra.innerText = total;
     if (checkDomicilio.checked) {
@@ -182,6 +192,8 @@ function actualizarTotales() {
 
     calcularCuotas();
 }
+
+// funcion para calcular interes en las cuotas
 
 function calcularCuotas() {
     let cuotas = parseInt(cuotasInput.value);
