@@ -1,0 +1,306 @@
+
+body {
+    font-family: 'Graduate';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image:url(./img/fondo\ web.png);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.contenedor-logo {
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-logo h3{
+    color: #FB9C32;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #FB9C32;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links li a:hover {
+    color: #0056b3;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.search i{
+    color: #FB9C32;
+}
+
+.search i:hover{
+    color: #007bff;
+}
+
+.banner video {
+    width: 100%;
+    height: auto;
+}
+
+.contenedor-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.card h4,h3{
+    font-size: large;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: 10ms;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: medium;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+}
+
+.carro {
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.contenedor-carro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-carro {
+    background-color: #f8f8f8;
+    padding: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 5px;
+    flex: 1 1 calc(100% / 12 - 10px); 
+    box-sizing: border-box;
+    max-width: 70px; 
+}
+
+.card-carro h3,h4 {
+    font-size:x-small;
+}
+
+.card-carro img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.card-carro button {
+    padding: 5px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card-carro button:hover {
+    background-color: #c82333;
+}
+
+.caja-envio, .total, .b-pagar, .cuotas, .total-cuotas {
+    flex: 1 1 100%;
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contenedor-check{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.opciones-envio {
+    flex: 1 1 100%;
+    padding: 10px;
+    background-color: #f8f8f8;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.opciones-envio label {
+    display: flex;
+    align-items: center;
+}
+
+.opciones-envio input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.b-pagar button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.b-pagar button:hover {
+    background-color: #218838;
+}
+
+/* Responsive  */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contenedor-card {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .card {
+        padding: 5px;
+    }
+
+    .card img {
+        margin-bottom: 5px;
+    }
+
+    .card button {
+        padding: 5px;
+    }
+
+    .contenedor-carro {
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+
+    .caja-envio, .total, .b-pagar {
+        margin-top: 5px;
+        padding: 5px;
+    }
+
+    .b-pagar button {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        font-size: 16px;
+    }
+
+    .contenedor-card {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: auto;
+    }
+
+    .card button {
+        font-size: 14px;
+    }
+
+    .card-carro {
+        padding: 3px;
+    }
+
+    .card-carro button {
+        padding: 3px;
+        font-size: 14px;
+    }
+
+    .caja-envio, .total, .b-pagar {
+        font-size: 14px;
+    }
+
+    .b-pagar button {
+        padding: 5px;
+    }
+}
