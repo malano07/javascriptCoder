@@ -1,157 +1,67 @@
 
-//array con objetos para exportar al html
+document.addEventListener('DOMContentLoaded', () => {
 
-const productos = [
-    {
-        img: "./img/productos/buzo blanco.png",
-        titulo: "Buzo Abs Blanco",
-        precio: 45000,        
-    },
-    {
-        img: "./img/productos/buzo bordo.png",
-        titulo: "Buzo Abs Bordo",
-        precio: 45000,
-    },
-    {
-        img: "./img/productos/buzo rosa.png",
-        titulo: "Buzo Abs Rosa",
-        precio: 45000,
-    },
-    {
-        img: "./img/productos/gorra blanca 2.jpg",
-        titulo: "Gorra Blanca 2",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra blanca 3.jpg",
-        titulo: "Gorra Blanca 3",
-        precio: 25000,
-    },   
-    {
-        img: "./img/productos/gorra blanca.jpg",
-        titulo: "Gorra Blanca",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra blanco y roja.jpg",
-        titulo: "Gorra Blanca y Roja",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra gris.jpg",
-        titulo: "Gorra Gris",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra negra.jpg",
-        titulo: "Gorra Negra",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra negra 2.jpg",
-        titulo: "Gorra Negra 2",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra negra 3.jpg",
-        titulo: "Gorra Negra 3",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra negra 4.png",
-        titulo: "Gorra Negra 4",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra roja.jpg",
-        titulo: "Gorra Roja",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra verde 1.jpg",
-        titulo: "Gorra Verde",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra verde 2.jpg",
-        titulo: "Gorra Verde 2",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorra verde 3.jpg",
-        titulo: "Gorra Verde 3",
-        precio: 25000,
-    },
-    {
-        img: "./img/productos/gorro invierno.png",
-        titulo: "Gorra Invierno",
-        precio: 20000,
-    },
-    {
-        img: "./img/productos/remera amarilla.png",
-        titulo: "Remera Amarilla",
-        precio: 27000,
-    },
-    {
-        img: "./img/productos/remera negra.png",
-        titulo: "Remera Negra",
-        precio: 27000,
-    },
-    {
-        img: "./img/productos/remera niño rosa.png",
-        titulo: "Remera Niño Rosa",
-        precio: 17000,
-    }, 
-    {
-        img: "./img/productos/remera zul.png",
-        titulo: "Remera Azul",
-        precio: 27000,
-    }, 
-];
+   
 
-// Variables para los eventos y funciones
 
-const contenedor_card = document.querySelector('.contenedor-card');
-const contenedor_carro = document.querySelector('.contenedor-carro');
-const totalCompra = document.getElementById('total-compra');
+
+    const contenedorCard = document.querySelector('.contenedor-card');
+
+    // Función para cargar los productos desde el JSON local
+    const cargarProductos = async () => {
+        try {
+            const respuesta = await fetch('../data/productos.json');
+            const productos = await respuesta.json();
+
+            // Crear tarjetas para cada producto
+            productos.forEach(producto => {
+                let div = document.createElement('div');
+                div.classList.add('card');
+                div.innerHTML = `
+                    <img src="${producto.img}" alt="producto">   
+                    <h3>${producto.titulo}</h3>
+                    <h4>$ ${producto.precio}</h4>
+                `;
+
+                let button = document.createElement('button');
+                button.classList.add('boton-agregar');
+                button.innerText = "Agregar";
+                button.addEventListener('click', () => {
+                    agregarAlCarro(producto);
+                    Toastify({
+                        text: `Agregaste ${producto.titulo}`,
+                        avatar: `${producto.img}`,
+                        duration: 2000
+                    }).showToast();
+                });
+
+                div.append(button);
+                contenedorCard.append(div);
+            });
+
+        } catch (error) {
+            console.error('Error al cargar los productos:', error);
+        }
+    };
+
+    // Llamada a la función para cargar los productos
+    cargarProductos();
+
+
+ const totalCompra = document.getElementById('total-compra');
 const valorEnvio = document.getElementById('valor-envio');
 const totalPagar = document.getElementById('total-pagar');
 const totalCuotas = document.getElementById('total-cuotas');
 const cuotasInput = document.getElementById('cuotas');
 const checkDomicilio = document.querySelector('.check-domicilio');
+const contenedor_carro = document.querySelector('.contenedor-carro');
+
 
 let total = 0;
 let envio = 0;
 cargarCarroDesdeLocalStorage()
 
-// Creación e inserción de productos en el HTML recorriendo el array productos con el forEach
 
-productos.forEach((producto) => {
-    let div = document.createElement('div');
-    div.classList.add('card');
-    div.innerHTML = `
-        <img src="${producto.img}" alt="producto">   
-        <h3>${producto.titulo}</h3>
-        <h4>$ ${producto.precio}</h4>
-    `;
-
-    let button = document.createElement('button');
-    button.classList.add('boton-agregar');
-    button.innerText = "Agregar";
-    button.addEventListener('click', () => {
-        agregarAlCarro(producto);
-        Toastify({
-
-            text: `agregaste ${producto.titulo}` ,
-            avatar: `${producto.img}`,
-            duration: 2000
-            
-            }).showToast();
-    });
-
-    div.append(button);
-    contenedor_card.append(div);
-});
 
 
 
@@ -268,10 +178,48 @@ function calcularCuotas() {
         totalCuotas.innerText = 0;
         return;
     }
-    let totalConInteres = total + (total * 0.10 * cuotas);
+    let totalConInteres = total * (1 + 0.10 * cuotas);
     totalCuotas.innerText = totalConInteres + envio;
 }
 
 cuotasInput.addEventListener('input', calcularCuotas);
 checkDomicilio.addEventListener('change', actualizarTotales);
 
+ // alert en boton pagar
+
+ const botonPagar = document.querySelector('.boton-pagar');
+    
+ botonPagar.addEventListener('click', () => {
+     Swal.fire({
+         icon: 'success',
+         title: '¡Pago Acreditado!',
+         text: 'Tu pago se acreditó correctamente',
+         confirmButtonText: 'Aceptar',
+     });
+ });
+
+ const botonSuscribir = document.getElementById('boton-suscribir');
+    
+    botonSuscribir.addEventListener('click', (event) => {
+        event.preventDefault(); // Evitar que se envíe el formulario inmediatamente
+        
+        Swal.fire({
+            icon: 'success',
+            title: '¡Suscripción exitosa!',
+            text: 'Te has suscrito correctamente. Pronto recibirás nuestras novedades.',
+            confirmButtonText: 'Aceptar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Aquí puedes enviar el formulario si lo deseas
+                botonSuscribir.closest('form').submit();
+            }
+        });
+    });
+
+
+});
+
+
+
+
+     

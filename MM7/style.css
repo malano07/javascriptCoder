@@ -4,8 +4,210 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image:url(./img/fondo\ web.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
+
+/* Estilo general para el contenedor */
+.contenedor-suscripcion {
+    max-width: 500px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    padding: 20px;
+    background-color: #f9f9f9; /* Color de fondo del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Centrar texto e hijos */
+}
+
+/* Estilo para el título */
+.contenedor-suscripcion h2 {
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-size: 24px; /* Tamaño del texto del título */
+    color: #333; /* Color del texto del título */
+}
+
+/* Estilo para el formulario */
+.contenedor-suscripcion form {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    gap: 10px; /* Espacio entre los elementos del formulario */
+}
+
+/* Estilo para las etiquetas */
+.contenedor-suscripcion label {
+    font-size: 16px; /* Tamaño del texto de la etiqueta */
+    color: #555; /* Color del texto de la etiqueta */
+}
+
+/* Estilo para el campo de entrada de correo electrónico */
+.contenedor-suscripcion input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd; /* Borde del campo de entrada */
+    border-radius: 4px; /* Bordes redondeados */
+    width: 100%; /* Ancho completo del campo de entrada */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Estilo para el botón de suscripción */
+.contenedor-suscripcion button {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff; /* Color del texto del botón */
+    background-color: #007BFF; /* Color de fondo del botón */
+    border: none;
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+/* Estilo para el botón en estado de hover */
+.contenedor-suscripcion button:hover {
+    background-color: #FB9C32; /* Color más oscuro al pasar el cursor sobre el botón */
+}
+
+
+
+
+
+
+
+.whatsapp{
+    position: absolute;
+    margin-top: 350px;
+    
+
+}
+
+.whatsapp i{
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #25D366; 
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    text-align: center;
+    z-index: 1000; 
+    transition: background-color 0.3s;
+   
+
+}
+
+.whatsapp i:hover {
+
+    color: #25D366;
+    background-color: white;
+    
+
+}
+
+.none{
+    display: none;
+}
+
+/* Estilo general para el footer */
+footer {
+    background-color: #333; /* Fondo oscuro */
+    color: #FB9C32; /* Color dorado para el texto */
+    padding: 20px; /* Espacio interno */
+    text-align: center; /* Centrar el texto */
+    width: 100%;
+    
+}
+
+.footer_main {
+    display: flex; /* Usar flexbox para la disposición */
+    justify-content: space-between; /* Espacio uniforme entre columnas */
+    flex-wrap: wrap; /* Permite que las columnas se ajusten en pantallas pequeñas */
+    gap: 20px; /* Espacio entre columnas */
+    align-items: center;
+    
+}
+
+.columna1,
+.columna2,
+.columna3 {
+    flex: 1; /* Hacer que las columnas se expandan igualmente */
+    min-width: 200px; /* Ancho mínimo de las columnas */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* Estilo para el iframe del mapa */
+.columna1 iframe {
+    width: 75%; /* Ancho completo del contenedor */
+    border: 0;
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espacio debajo del mapa */
+}
+
+/* Estilo para los párrafos en columna1 */
+.columna1 p {
+    margin: 10px 0; /* Espacio arriba y abajo del texto */
+    font-size: 14px; /* Tamaño del texto */
+    color: #FB9C32; /* Color dorado para el texto */
+}
+
+/* Estilo para las listas en columna2 y columna3 */
+.footer-links {
+    list-style: none; /* Quitar los puntos de la lista */
+    padding: 0; /* Quitar el padding de la lista */
+    margin: 0; /* Quitar el margin de la lista */
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    
+
+
+}
+
+/* Estilo para los enlaces en columna2 */
+.footer-links li {
+    margin-bottom: 10px; /* Espacio debajo de cada elemento de la lista */
+}
+
+.footer-links a {
+    color: #FB9C32; /* Color dorado para los enlaces */
+    text-decoration: none; /* Quitar el subrayado */
+    font-size: 16px; /* Tamaño del texto */
+    display: flex;
+    align-items: center; /* Alinear íconos y texto verticalmente */
+    gap: 10px; /* Espacio entre íconos y texto */
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* Subrayar el texto al pasar el cursor */
+}
+
+/* Estilo para los íconos en columna3 */
+.columna3 ul {
+    display: flex;
+    gap: 15px; /* Espacio entre íconos */
+    justify-content: center; /* Centrar los íconos */
+}
+
+.columna3 li {
+    display: inline; /* Mostrar los elementos en línea */
+}
+
+.columna3 a {
+    color: #FB9C32; /* Color dorado para los enlaces */
+    font-size: 24px; /* Tamaño de los íconos */
+    transition: color 0.3s; /* Transición suave para el color */
+}
+
+.columna3 a:hover {
+    color: #FFD700; /* Color dorado más brillante al pasar el cursor */
+}
+
+
 
 .nav {
     display: flex;
@@ -14,6 +216,7 @@ body {
     background-color: #333;
     padding: 10px 20px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .contenedor-logo {
@@ -67,6 +270,9 @@ body {
     color: #007bff;
 }
 
+.banner{
+    width: 100%;
+}
 .banner video {
     width: 100%;
     height: auto;
@@ -212,12 +418,128 @@ body {
     background-color: #218838;
 }
 
+.nosotros_general{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nosotros_general img{
+    width: 10%;
+}
+
+.nosotros_general p{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.contenedor-form {
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Estilo del título del formulario */
+.contenedor-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #FB9C32; /* Color base para el título */
+    text-align: center;
+}
+
+/* Estilo de las etiquetas de los campos */
+.contenedor-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333; /* Color gris oscuro para las etiquetas */
+}
+
+/* Estilo de los campos de entrada */
+.contenedor-form input, 
+.contenedor-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo del área de comentarios */
+.contenedor-form textarea {
+    resize: vertical; /* Permitir redimensionar verticalmente */
+    height: 120px;
+}
+
+/* Estilo del botón de envío */
+.contenedor-form button {
+    background-color: #FB9C32; /* Color base para el botón */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambio de color del botón al pasar el ratón */
+.contenedor-form button:hover {
+    background-color: #e07b22; /* Color más oscuro para el efecto hover */
+}
+
+/* Estilo para mensajes de error (si los necesitas en el futuro) */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.contenedor_faq {
+    max-width: 75%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-faq{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.div-faq:hover{
+    background-color: #9b9797;
+    transition: 200ms;
+}
+
+
+
 /* Responsive  */
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
         align-items: center;
     }
+
+    .columna1,.columna2{
+        display: none;
+    }
+
+
 
     .nav-links {
         flex-direction: column;

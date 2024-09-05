@@ -1,0 +1,128 @@
+[
+    {
+        "id":1,
+        "img": "./img/productos/buzo blanco.png",
+        "titulo": "Buzo Abs Blanco",
+        "precio": 45000     
+    },
+    {
+        "id":2,
+        "img": "./img/productos/buzo bordo.png",
+        "titulo": "Buzo Abs Bordo",
+        "precio": 45000
+    },
+    {
+        "id":3,
+        "img": "./img/productos/buzo rosa.png",
+        "titulo": "Buzo Abs Rosa",
+        "precio": 45000
+    },
+    {
+        "id":4,
+        "img": "./img/productos/gorra blanca 2.jpg",
+        "titulo": "Gorra Blanca 2",
+        "precio": 25000
+    },
+    {
+        "id":5,
+        "img": "./img/productos/gorra blanca 3.jpg",
+        "titulo": "Gorra Blanca 3",
+        "precio": 25000
+    },   
+    {
+        "id":6,
+        "img": "./img/productos/gorra blanca.jpg",
+        "titulo": "Gorra Blanca",
+        "precio": 25000
+    },
+    {
+        "id":7,
+        "img": "./img/productos/gorra blanco y roja.jpg",
+        "titulo": "Gorra Blanca y Roja",
+        "precio": 25000
+    },
+    {
+        "id":8,
+        "img": "./img/productos/gorra gris.jpg",
+        "titulo": "Gorra Gris",
+        "precio": 25000
+    },
+    {
+        "id":9,
+        "img": "./img/productos/gorra negra.jpg",
+        "titulo": "Gorra Negra",
+        "precio": 25000
+    },
+    {
+        "id":10,
+        "img": "./img/productos/gorra negra 2.jpg",
+        "titulo": "Gorra Negra 2",
+        "precio": 25000
+    },
+    {
+        "id":11,
+        "img": "./img/productos/gorra negra 3.jpg",
+        "titulo": "Gorra Negra 3",
+        "precio": 25000
+    },
+    {
+        "id":12,
+        "img": "./img/productos/gorra negra 4.png",
+        "titulo": "Gorra Negra 4",
+        "precio": 25000
+    },
+    {
+        "id":13,
+        "img": "./img/productos/gorra roja.jpg",
+        "titulo": "Gorra Roja",
+        "precio": 25000
+    },
+    {
+        "id":14,
+        "img": "./img/productos/gorra verde 1.jpg",
+        "titulo": "Gorra Verde",
+        "precio": 25000
+    },
+    {
+        "id":15,
+        "img": "./img/productos/gorra verde 2.jpg",
+        "titulo": "Gorra Verde 2",
+        "precio": 25000
+    },
+    {
+        "id":16,
+        "img": "./img/productos/gorra verde 3.jpg",
+        "titulo": "Gorra Verde 3",
+        "precio": 25000
+    },
+    {
+        "id":17,
+        "img": "./img/productos/gorro invierno.png",
+        "titulo": "Gorra Invierno",
+        "precio": 20000
+    },
+    {
+        "id":18,
+        "img": "./img/productos/remera amarilla.png",
+        "titulo": "Remera Amarilla",
+        "precio": 27000
+    },
+    {
+        "id":19,
+        "img": "./img/productos/remera negra.png",
+        "titulo": "Remera Negra",
+        "precio": 27000
+    },
+    {
+        "id":20,
+        "img": "./img/productos/remera niño rosa.png",
+        "titulo": "Remera Niño Rosa",
+        "precio": 17000
+    }, 
+    {
+        "id":21,
+        "img": "./img/productos/remera zul.png",
+        "titulo": "Remera Azul",
+        "precio": 27000
+    } 
+]
